@@ -14,6 +14,7 @@ import {
   Title,
   Button,
   Col,
+  Flex,
 } from "@tremor/react";
 import "@covalenthq/goldrush-kit/styles.css";
 import { useEffect, useState } from "react";
@@ -62,7 +63,7 @@ export default function App() {
         setMin1("Error...");
         setMin3("Error...");
         setMin5("Error...");
-        console.log(resp.error_message)
+        console.log(resp.error_message);
       }
       setIsLoading(false);
     };
@@ -75,13 +76,25 @@ export default function App() {
       <Title>Covalent Gas Dashboard</Title>
       <Card>
         <Grid numItemsSm={3}>
-          <Col className="p-2">
-            <Text>COVALENT_APIKEY</Text>
-            <TextInput value={apiKey} onValueChange={setApiKey}></TextInput>
-          </Col>
-          <Col className="p-2">
-            <Text>BLOCKCHAIN</Text>
-            <Select onValueChange={setBlockchain} defaultValue={blockchain}>
+          <Flex className="p-2">
+            <Text className="m-6">COVALENT_APIKEY</Text>
+            <TextInput
+              className="m-6"
+              value={apiKey}
+              onValueChange={setApiKey}
+              type="password"
+            ></TextInput>
+            <Button className="m-6" onClick={buttonPressed}>
+              Update APIKEY!
+            </Button>
+          </Flex>
+          <Flex className="p-2">
+            <Text className="m-6">BLOCKCHAIN</Text>
+            <Select
+              className="m-6"
+              onValueChange={setBlockchain}
+              defaultValue={blockchain}
+            >
               <SelectItem value="arbitrum-goerli">arbitrum-goerli</SelectItem>
               <SelectItem value="arbitrum-mainnet">arbitrum-mainnet</SelectItem>
               <SelectItem value="arbitrum-nova-mainnet">
@@ -243,21 +256,23 @@ export default function App() {
               <SelectItem value="zksync-mainnet">zksync-mainnet</SelectItem>
               <SelectItem value="zora-mainnet">zora-mainnet</SelectItem>
             </Select>
-          </Col>
-          <Col className="p-2">
-            <Text>EVENTS</Text>
-            <Select onValueChange={setEvents} defaultValue={events}>
+          </Flex>
+          <Flex className="p-2">
+            <Text className="m-6">EVENTS</Text>
+            <Select
+              className="m-6"
+              onValueChange={setEvents}
+              defaultValue={events}
+            >
               <SelectItem value="erc20">ERC20 token transfers</SelectItem>
               <SelectItem value="nativetokens">
                 Native token transfers
               </SelectItem>
               <SelectItem value="uniswapv3">Uniswap V3 swap events</SelectItem>
             </Select>
-          </Col>
+          </Flex>
         </Grid>
-        <Col className="m-6">
-          <Button onClick={buttonPressed}>Update APIKEY!</Button>
-        </Col>
+        <Col className="m-6"></Col>
       </Card>
       <br />
       <TabGroup className="m-6">
@@ -267,7 +282,32 @@ export default function App() {
         </TabList>
         <TabPanels>
           <TabPanel className="m-6">
-            <Grid numItemsMd={3} className="m-6">
+            <Grid numItemsMd={1} className="p-6 m-6">
+              <Card>
+                <Text>
+                  This page was made for the Covalent bounty - Build and Deploy
+                  a Chain-specific Gas Price Dashboard Using GoldRush Kit
+                </Text>
+                <br />
+                <Text>
+                  Protection of User API Keys We are committed to safeguarding
+                  the security and confidentiality of API keys entrusted to us
+                  by our users. We adhere to strict best practices to ensure
+                  that API keys are used securely and not retained
+                  unnecessarily.
+                </Text>
+                <br />
+                <Text>
+                  {" "}
+                  If you need to get API Key, please visit{" "}
+                  <a href="https://www.covalenthq.com/platform/">
+                    https://www.covalenthq.com/platform/
+                  </a>{" "}
+                  and sign up for an API Key.
+                </Text>
+              </Card>
+            </Grid>
+            <Grid numItemsMd={3} className="p-6 m-6">
               <Card>
                 <Title>
                   Gas Price on {blockchain} - {events} (1min)
