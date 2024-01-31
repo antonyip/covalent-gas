@@ -302,7 +302,7 @@ export default function App() {
                   {" "}
                   If you need to get API Key, please visit{" "}
                   <a href="https://www.covalenthq.com/platform/">
-                    https://www.covalenthq.com/platform/
+                    https://www.covalenthq.com/platform
                   </a>{" "}
                   and sign up for an API Key.
                 </Text>
@@ -331,7 +331,7 @@ export default function App() {
           </TabPanel>
           <TabPanel className="m-6">
             <Grid numItemsMd={1}>
-              <Card>
+            <Card>
                 <Text>
                   This page was made for the Covalent bounty - Build and Deploy
                   a Chain-specific Gas Price Dashboard Using GoldRush Kit
@@ -342,9 +342,14 @@ export default function App() {
                   the security and confidentiality of API keys entrusted to us
                   by our users. We adhere to strict best practices to ensure
                   that API keys are used securely and not retained
-                  unnecessarily. If you need to get API Key, please visit{" "}
+                  unnecessarily.
+                </Text>
+                <br />
+                <Text>
+                  {" "}
+                  If you need to get API Key, please visit{" "}
                   <a href="https://www.covalenthq.com/platform/">
-                    https://www.covalenthq.com/platform/
+                    https://www.covalenthq.com/platform
                   </a>{" "}
                   and sign up for an API Key.
                 </Text>
