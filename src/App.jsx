@@ -76,19 +76,20 @@ export default function App() {
       <Title>Covalent Gas Dashboard</Title>
       <Card>
         <Grid numItemsSm={3}>
-          <Flex className="p-2">
-            <Text className="m-6">COVALENT_APIKEY</Text>
+          <Col className="p-2">
+          <Text className="m-6">COVALENT_APIKEY</Text>
+          <Flex className="m-6">
             <TextInput
-              className="m-6"
               value={apiKey}
               onValueChange={setApiKey}
               type="password"
             ></TextInput>
-            <Button className="m-6" onClick={buttonPressed}>
+            <Button onClick={buttonPressed}>
               Update APIKEY!
             </Button>
           </Flex>
-          <Flex className="p-2">
+          </Col>
+          <Col className="p-2">
             <Text className="m-6">BLOCKCHAIN</Text>
             <Select
               className="m-6"
@@ -256,8 +257,8 @@ export default function App() {
               <SelectItem value="zksync-mainnet">zksync-mainnet</SelectItem>
               <SelectItem value="zora-mainnet">zora-mainnet</SelectItem>
             </Select>
-          </Flex>
-          <Flex className="p-2">
+          </Col>
+          <Col className="p-2">
             <Text className="m-6">EVENTS</Text>
             <Select
               className="m-6"
@@ -270,7 +271,7 @@ export default function App() {
               </SelectItem>
               <SelectItem value="uniswapv3">Uniswap V3 swap events</SelectItem>
             </Select>
-          </Flex>
+          </Col>
         </Grid>
         <Col className="m-6"></Col>
       </Card>
